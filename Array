@@ -38,3 +38,4 @@ def main():
   arreglo.clearing(3)
   arreglo.to_string()
   
+main()
