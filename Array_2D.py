@@ -1,42 +1,41 @@
 class Array2D:
+    def __init__(self, rows, cols):
+        self.__data=[]
+        self.__rows=rows
+        self.__cols=cols
+        for i in range(rows):
+            tmp=[]
+            for j in range(cols):
+                tmp.append(None)
+            self.__data.append(tmp)
 
-  def __init__(self,rows,cols):
-    self.__data=[]
-    self.__row=rows
-    self.__col=cols
+    def to_string(self):
+        for j in range(self.__cols):
+            print(self.__data[j])
+
+    def get_num_rows(self):
+        return self.__rows
+
+    def get_num_cols(self):
+        return self.__cols
+
+    def clearing(self,value):
+        for i in range(self.__rows):
+            for j in range(self.__cols):
+                self.__data[i][j]=value
+
+    def set_item(self,row,col,value):
+        if row>=0 and row<=self.__rows and col>=0 and col<=self.__cols:
+            self.__data[row][col]=value
+        else:
+            return "Error en parámetros"
+
+    def get_item(self,row,col):
+        if row>=0 and row<self.__rows and col>=0 and col<self.__cols:
+            return self.__data[row][col]
+        else:
+            return "Error en parámetros"
     
-    for row in range (rows):
-      tmp=[]
-      for col in range (cols):
-        tmp.append(None)
-      self.__data.append(tmp)
-      
-  def to_string (self):
-    for j in range(self.__cols):
-      print(self.__data[j])
-    
-  def get_num_rows (self):
-    return self.__row
-    
-  def get_num_cols (self):
-    return self.__col
-  
-  def clearing (self,value):
-    for row in range (self.__row):
-      for col in range (self.__col):
-        self.__data[row][col]=value
-        
-  def set_item (self,r,c,valor):
-    if (r>=0 and r< self.__row) and (c>=0 and c<self.__col):
-      self.__data[r][c]=valor
-      
 def main():
-  Arreglo=Array2D(5,5)
-  Arreglo.to_string()
-  print(f"Numero de renglones: {Arreglo.get_num_rows()}")
-  print(f"Numero de columnas: {Arreglo.get_num_cols()}")
-  Arreglo.clearing(1)
-  Arreglo.to_string()
-  
+    arreglo = Array2D    
 main()
-  
