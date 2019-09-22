@@ -12,7 +12,8 @@ class Array2D:
       self.__data.append(tmp)
       
   def to_string (self):
-    print(self.__data)
+    for j in range(self.__cols):
+      print(self.__data[j])
     
   def get_num_rows (self):
     return self.__row
