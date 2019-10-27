@@ -16,6 +16,9 @@ class ListaDoblementeEnlazada:
 
     def get_size(self):
         return self.__size
+    
+    def is_empty(self):
+        return self.__size == 0
 
     def insert(self,value): #inserta al final
         if self.__size == 0:
